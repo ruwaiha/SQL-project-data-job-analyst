@@ -15,3 +15,11 @@ WHERE
 ORDER BY 
      salary_year_avg desc
 LIMIT 10
+SELECT 
+     top_paying_jobs.*,
+     skills
+FROM top_paying_jobs
+INNER JOIN skills_job_dim ON top_paying_jobs.job_id = skills_job_dim.job_dim
+INNER JOIN skills_dim ON top_paying_jobs.job_id = skills_job_dim.job_dim
+ORDER BY
+     salary_year_avg DESC
